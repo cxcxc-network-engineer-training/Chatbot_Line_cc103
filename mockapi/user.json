@@ -1,0 +1,16 @@
+[
+    {
+    "user_open_id":"abcDemo",
+    "user_nick_name":"yoyo",
+    "user_status" : "haha",
+    "user_img" : "https://ddascd",
+    "user_register_menu" : "xxxxxxx"
+    },
+    {
+    "user_open_id":"abmo",
+    "user_nick_name":"soyo",
+    "user_status" : "hsha",
+    "user_img" : "https://ascd",
+    "user_register_menu" : "zzzzzzzzz"
+    }
+]
