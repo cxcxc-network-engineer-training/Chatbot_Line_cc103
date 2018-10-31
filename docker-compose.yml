@@ -10,7 +10,9 @@ services:
     volumes:
      - ./redis/data:/data
   jupyter-tutorial:
-    image: asoo571314/jupyter-notebook:1.0
+    build:
+      context: ./dockerfile
+      dockerfile: dockerfile-jupyter
     container_name: chatbot_jupyter
     depends_on:
       - redis
