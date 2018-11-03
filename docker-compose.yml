@@ -6,22 +6,23 @@ services:
       dockerfile: dockerfile-redis
     container_name: chatbot_redis
     ports:
-     - "6379:6379"
+      - "6379:6379"
     volumes:
-     - ./redis/data:/data
+      - ./redis/data:/data
   jupyter-tutorial:
     build:
       context: ./dockerfile
-      dockerfile: dockerfile-jupyter
+      dockerfile: dockerfile-jupyter2
     container_name: chatbot_jupyter
     depends_on:
       - redis
+      - mock-api-server
     ports:
       - "8888:8888"
       - "5000:5000"
     command: start-notebook.sh --NotebookApp.token=''
     volumes:
-     - ./code:/home/jovyan/work
+      - ./code:/home/jovyan/work
   ngrok-external-dns:
     build:
       context: ./dockerfile
@@ -32,4 +33,10 @@ services:
     ports:
       - "4040:4040"
     command: ngrok http chatbot_jupyter:5000
-
+  mock-api-server:
+    image: ajnasz/api-mock
+    container_name: chatbot_mock
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./api.md:/usr/src/app/api.md
