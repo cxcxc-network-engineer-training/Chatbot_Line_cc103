@@ -1,9 +1,7 @@
 version: '3'
 services:
   redis:
-    build:
-      context: ./dockerfile
-      dockerfile: dockerfile-redis
+    image: redis:4.0.11
     container_name: chatbot_redis
     ports:
       - "6379:6379"
