@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <link rel=stylesheet type="text/css" href="./style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title> 資策會網工班 Line Chat Box 意見回報</title>
+        <script>
+            function validateForm() {
+                phoneRule= /[0-9()-]/;
+                if (document.getElementById("name").value=="" || document.getElementById("name").value=="輸入姓名或暱稱") {
+                     alert("Name must be filled");
+                     document.getElementById("name").focus();
+                     return false;
+                }
+                if (document.getElementById("phone").value=="" || document.getElementById("phone").value=="0987654321") {
+                     alert("phone number must be filled");
+                     document.getElementById("phone").focus();
+                     return false;
+                }
+                if(document.getElementById("phone").value.search(phoneRule)==-1){
+                    alert("Please enter correct phonenumber");
+                    document.getElementById("phone").focus();
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+    <h3> 資策會網工班 Line_Chat_Box 意見回報 </h3>
+    <div>
+        <form  role="form" action="" method="post" onsubmit="return validateForm()" >
+            姓名或暱稱 : <br>
+            <input id="name" type="text" name="name" value="輸入姓名或暱稱"  size="35"></input>
+            <br><br>
+            電話號碼 : <br>
+            <input id="phone" type="text" name="phone" value="0987654321" size="35"></input>
+            <br><br>
+            電子郵件 : <br>
+            <input id="email" type="text" name="email" value="example@gmail.com" size="35" ></input>
+            <br><br>
+            意見回饋 : <br>
+            <input id="context" type="text" name="context" ></input>
+            <br><br>
+            <input type="checkbox" name="bot"  value="True">是否想收到資策會的相關課程訊息
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    </body>
+</html>
+           
