@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <style>
+            body {
+                background-color:cornsilk;
+                background-size:100% 100%;
+                }
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title> manage page </title>
+    </head>
+    <body>
+        <h1> This is the page for manager </h1>
+        <form  role="form" action="" method="post" >
+        <table>
+        {% for data in data %}
+            <tr>
+                <td><input type="checkbox" name={{data.user_id}}  value={{data.user_id}}> </td>
+                <td>{{data.user_name}}</td>
+                <td>{{data.user_phone}}</td>
+                <td>{{data.user_email}}</td>
+                <td>{{data.user_bool}}</td>
+                <td>{{data.user_date}}</td>
+                <td>{{data.user_context}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        <input type="submit" name="button" value="Delete">
+        </form>
+    </body>
+</html>
