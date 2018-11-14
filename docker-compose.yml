@@ -21,16 +21,18 @@ services:
     command: start-notebook.sh --NotebookApp.token=''
     volumes:
       - ./code:/home/jovyan/work
-  ngrok-external-dns:
-    build:
-      context: ./dockerfile
-      dockerfile: dockerfile-ngrok
-    container_name: chatbot_ngrok
+  nginx-proxy:
+    image: nginx
+    container_name: chatbot_nginx
     depends_on:
       - jupyter-tutorial
     ports:
-      - "4040:4040"
-    command: ngrok http chatbot_jupyter:5000
+      - "443:443"
+    volumes:
+      - ./docker_vol/nginx:/etc/nginx
+      - ./docker_vol/nginx-conf.d:/etc/nginx/conf.d
+      - ./docker_vol/cert-letsencrypt:/etc/pki/nginx
+ #   command: ngrok http chatbot_jupyter:5000
   mock-api-server:
     image: ajnasz/api-mock
     container_name: chatbot_mock
