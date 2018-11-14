@@ -1136,7 +1136,7 @@ def handle_message(event):
 # In[ ]:
 
 
-get_ipython().system('pip install PyMySQL')
+#get_ipython().system('pip install PyMySQL')
 
 
 # In[ ]:
