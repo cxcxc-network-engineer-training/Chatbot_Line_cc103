@@ -5,7 +5,7 @@ git clone https://github.com/iii-cutting-edge-tech-lab/Chatbot_Line_cc103.git
 
 cd Chatbot_Line_cc103
 
-開啟環境流程(只供開發使用，只開啟jupyter、ngrok、Redis的container，要再開出Chatbot_Dev環境才有五台container，Line server才能連動)
+開啟環境流程(只供開發使用，只開啟jupyter、ngrok、Redis的container，要再開出Chatbot_Dev(api、mysql)環境才有五台container，Line server才能連動)
 
 docker-compose up -d
 
@@ -16,8 +16,10 @@ http://本機ip:8888
 
 要特別注意，要開出Chatbot_Dev環境才有五台container，Line server才能連動
 ngrok server 有一個uri 要填入line@帳號管理界面中，否則Line server收不到line用戶端傳來的封包
+curl $(docker ngrok_name 4040)/api/tunnels   or   curl -s "localhost:4040/api/tunnels" 
+
 詳情請去看dropbox paper
-https://paper.dropbox.com/doc/Line--AN464_05O3RLSljySjwdJdBSAg-bPvrgUXIEdeYix5uKvP9k
+https://bit.ly/2PY7Bkz
 
 底下是這個repo的資料夾結構
 
@@ -31,6 +33,11 @@ app.ipynb
 app.py
 #裝一些要呼叫的重要變數
 secret_key
+#製作前後台web，製作完畢並測試後，與app.ipynb合併
+web.ipynb
+
+templates/
+web的html
 
 /mockapi #裝mockapi的程式碼
 
