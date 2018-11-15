@@ -1,6 +1,0 @@
-FROM library/ubuntu
-#安裝flask 0.12, request, line-bot-sdk
-RUN apt-get update
-RUN apt-get install python-pip python3 -y
-RUN pip install Flask==0.12 requests line-bot-sdk redis
-
