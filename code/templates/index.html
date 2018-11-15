@@ -1,0 +1,87 @@
+﻿<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>CC103 AWS 考古題 Line Chatbot 意見回饋</title>
+	<!-- Meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Airline Booking Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements"
+	/>
+	<!-- //Meta tags -->
+	<!-- Stylesheet -->
+	<link href="{{ url_for('static',filename='css/wickedpicker.css') }}" rel="stylesheet" type='text/css' media="all" />
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/jquery-ui.css') }}" />
+	<link href="{{ url_for('static',filename='css/style.css') }}" rel='stylesheet' type='text/css' />
+	<!-- //Stylesheet -->
+</head>
+<body>
+	<!--background-->
+	<h1>CC103 AWS 考古題 Line Chatbot 意見回饋</h1>
+	<div class="booking-form-w3layouts">
+		<!-- Form starts here -->
+		<form role="form" action="" method="post" onsubmit="return validateForm()">
+			<h3 class="sub-heading-agileits">Personal Details</h3>
+			<div class="main-flex-w3ls-sectns">
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+					<input id="name" type="text" name="name" placeholder="輸入姓名或暱稱" required="">
+				</div>
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<input id="phone" type="text" name="phone" placeholder="0987654321" required="">
+				</div>
+			</div>
+			<div class="field-agileinfo-spc form-w3-agile-text">
+				<input id="email" type="email" name="email" placeholder="example@gmail.com" required="">
+			</div>
+			
+			<h3 class="sub-heading-agileits">請填寫您的意見</h3>
+			<div class="main-flex-w3ls-sectns">
+				<!-- 意見回饋 :  -->
+				<div class="field-agileinfo-spc form-w3-agile-text">
+					<textarea id="context" name="context" placeholder="Any Message..."></textarea>
+				</div>
+			</div>
+			
+			<div class="radio-section">
+				<input name="bot" type="checkbox" id="a-option" name="selector1" value="true">
+				<h6>想收到資策會的相關課程訊息</h6>
+			</div>
+			<div class="clear"></div>
+			<input type="submit" value="Submit">
+			<input type="reset" value="Clear Form">
+			<div class="clear"></div>
+		</form>
+		<!--// Form starts here -->
+	</div>
+	<!--copyright-->
+	<div class="copyright">
+		<p>&copy; 2018. Airline Booking Form . All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a>			</p>
+	</div>
+	<!--//copyright-->
+	<script type="text/javascript" src="{{ url_for('static',filename='js/jquery-2.2.3.min.js') }}"></script>
+	<!-- Time Js -->
+	<script type="text/javascript" src="{{ url_for('static',filename='js/wickedpicker.js') }}"></script>
+	<script type="text/javascript">
+		$('.timepicker,.timepicker1').wickedpicker({
+			twentyFour: false
+		});
+	</script>
+	<!--// Time Js -->
+	<!-- Calendar Js -->
+	<script src="{{ url_for('static',filename='js/jquery-ui.js') }}"></script>
+	<script>
+		$(function () {
+			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+		});
+	</script>
+	<!-- //Calendar Js -->
+
+</body>
+
+</html>

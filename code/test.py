@@ -97,7 +97,7 @@ from linebot.models import (
 
 # 消息清單
 reply_message_list = [
-TextSendMessage(text="CC102-Line考古題機器人。\n請按功能選單進行測驗")
+TextSendMessage(text="CC103-Line考古題機器人。\n請按功能選單進行測驗")
 ]
     
 
